@@ -1,0 +1,29 @@
+<!Doctype html>
+<head>
+    <link rel="stylesheet" href="../css/SignUp.css">
+</head>
+<body >
+    <div id="main">
+        <h3>Sign Up</h3>
+        <form id="formm">
+            <div id="set">
+        <input id="name" type="text" placeholder="Enter Full Name" oninput="setCustomValidity('')"> <br><br>
+        </div>
+    <div id="set">
+        <input id="uname" type="text" placeholder="username" oninput="setCustomValidity('')"> <br><br>
+        </div> 
+        <div id="set">
+        <input id="password" type="password" placeholder="password" required><br><br>
+        </div>
+             <div id="set">
+        <input id="email" type="text" placeholder="email" oninput="setCustomValidity('')"><br><br>
+    </div>
+        <b><input id="btn" type="submit" value="Sign Up" onclick="checkValidation();"></b><br><br>
+        <a href="./" style="text-decoration:none; color:black; font-size: small;text-align: center;">Already have an Account??</p>    
+    </form>
+    </div>
+    
+    </body>
+    <script src="../public/SignUp.js" type="text/javascript"></script>
+</head>
+</html>
