@@ -1,27 +1,27 @@
 @charset "utf-8"; 
-
+@font-face{
+    font-family: "logo";
+    src:url("../fonts/Countryside-YdKj.ttf");
+  }
 body{
-    
-    padding: 0;
-    margin: 0;
+    background-image: url("../uploads/back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-#main
-{
-    box-shadow: 0px 4px 8px #ccc;
-    border: 2px solid grey;
-    position: absolute;
-    top:25%;
-    left:38%;
-    font-size: 20px;
-    padding: 20px 45px;
+#background{
+    background-color: #facafa;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.container{
+   padding-top: 100px;
 }
 #formm input::placeholder{
     font-family:fontAwesome;
 }
 #set
 {
-    width: 100%;
-    font-size: 30px;
     margin: 8px 0;
     padding: 8px 0;
     border-bottom:1px solid black;
@@ -49,3 +49,133 @@ h1
     margin-top: 20px;
     border-radius: 80px;
 }
+.login{
+
+    float: left;
+    border: 2px solid black;
+    padding: 30px;
+    width: 100%;
+    
+}
+#logo{  
+    font-family: logo;
+    font-size: x-large;  
+    color: rgb(245, 10, 175);
+  }
+ul{
+    position: absolute;
+    right: 0%;
+    float:right;
+    margin-top:20px;
+    margin-right: 20px;
+    cursor:pointer;
+  }
+  ul li{
+    display:inline;
+    transition: 0.5s ease;
+  }
+  ul li a{
+    font-size: larger;
+    text-decoration: none;
+    color:black;
+    padding:5px 20px;
+    border:1px;
+    border-radius:2px;
+    transition: 0.5s ease;
+  }
+ul li a:hover{
+    background-color: #f5abf5 ;
+    color:white;
+    outline:none;
+    transition: 0.2s ease;
+  }
+
+
+.box{
+    width : 360px;
+    padding:50px 20px;
+    background-color:#fff2ff;
+    opacity:0.7;
+    position: absolute;
+    top:50%;
+    left:20%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  }
+  .box input[type="text"],.box input[type="password"]
+  {
+    border:0;
+    background: none;
+    display:block;
+    margin:20px auto;
+    padding:inherit;
+    text-align: center;
+    width:100%;
+    padding:10px 10px;
+    outline:none;
+    color:black;
+    transition: 0.5s;
+    font-size: inherit;
+  }
+  .box h1{
+    opacity: 1;
+    color:rgb(250, 6, 197);
+    text-transform: uppercase;
+    padding:10px;
+    font-weight:500;
+    font-size: 50px;
+    /* font-family:monospace; */
+  
+  }
+  .box input[type="text"]:hover,.box input[type="password"]:hover{
+    border-color: white;
+    background-color: white;
+    color: black;
+    text-decoration-style: dashed;
+  }
+  .box input[type="text"]:focus,.box input[type="password"]:focus{
+    background-color: white;
+    color:black;
+    border-color: purple;
+  }
+  .box input[type="submit"]
+  {
+    border:0;
+    background: white;
+    display:block;
+    margin:20px auto;
+    text-align: center;
+    border: 1px solid #dff9fb;
+    border-radius: 17px;
+    width:100px;
+    padding:5px;
+    outline:none;
+    color:black;
+    transition: 0.25s;
+    bottom:60%;
+  }
+  .box input[type="submit"]:hover{
+    cursor: pointer;
+    width:125px;
+    font-size: 15px;
+    border-color:#dff9fb;
+  
+  }
+  .box input[type="submit"]:focus{
+    cursor: pointer;
+     border-color: purple;
+  
+  }
+  ::placeholder:focus{
+    color:white;
+  }
+  ::placeholder{
+    color: gray;
+  }
+  .box p{
+    size:20px;
+    cursor:pointer;
+    color:black;
+  }

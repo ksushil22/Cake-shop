@@ -52,10 +52,12 @@ function checkValidation()
                     password:password.value.trim(),
                 });               
                 var xHTTP = new XMLHttpRequest();
-                xHTTP.onload = ()=> {
-                    const response = JSON.parse(xHTTP.responseText);
-                    if(response == true){
-                        window.location.href="/viewProducts";
+                xHTTP.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200){
+                        const id = this.responseText.slice(1,-1);
+                        console.log(id);
+                        localStorage.userid = id;
+                        getUser();
                     }
                 };
                 xHTTP.open('POST', '/saveUser');                
@@ -68,6 +70,37 @@ function checkValidation()
     
     return false;
 }
+
+
+async function getUser(){
+    const id = localStorage.userid;
+    console.log(`getting user for id ${id}`);
+    var xHTTP = new XMLHttpRequest();
+    xHTTP.onload=function(){
+        localStorage.user = this.responseText;
+        getCart();
+    }
+    xHTTP.open("GET",`/getUser/:${id}`);
+    xHTTP.send();
+}
+
+function getCart(){    
+    const id = localStorage.userid;
+    var xHTTP = new XMLHttpRequest();
+    xHTTP.onload = function(){
+        console.log("collecting data");
+        console.log(this.responseText);
+        localStorage.cart = this.responseText;
+        console.log(localStorage.cart);        
+        window.location.href="/viewProducts";
+    }
+    xHTTP.open('GET',`/getCart/:${id}`);
+    xHTTP.send();
+}
+
+
+
+
 let typingTimer;                
 let doneTypingInterval = 1000;  
 let myInput = document.getElementById('uname');
@@ -80,7 +113,8 @@ myInput.addEventListener('keyup', () => {
 });
 function checkUsername(){
     const user = document.getElementById("uname");
-    const username = user.value.trim();              
+    const username = user.value.trim();      
+    const button = document.getElementById("btn");        
     var xHTTP = new XMLHttpRequest();
     xHTTP.onload = () =>{
         const reply = JSON.parse(xHTTP.responseText);
@@ -88,10 +122,12 @@ function checkUsername(){
         if(reply == "true"){
             user.setAttribute("style","border : 1px solid red")
             user.setCustomValidity("user already exist");
+            button.disabled=true;
         }
         else{
             user.setAttribute("style","border : 1px solid green");
             user.setCustomValidity("");
+            button.disabled=false;
         }
     }
     xHTTP.open('POST', '/findUname');                
@@ -109,7 +145,8 @@ em.addEventListener('keyup', () => {
 });
 function checkEmail(){
     const user = document.getElementById("email");
-    const email = user.value.trim();              
+    const email = user.value.trim();   
+    const button = document.getElementById("btn");                
     var xHTTP = new XMLHttpRequest();
     xHTTP.onload = () =>{
         const reply = JSON.parse(xHTTP.responseText);
@@ -117,10 +154,13 @@ function checkEmail(){
         if(reply == "true"){
             user.setAttribute("style","border : 1px solid red")
             user.setCustomValidity("user already exist");
+            button.disabled=true;
+            
         }
         else{
             user.setAttribute("style","border : 1px solid green");
             user.setCustomValidity("");
+            button.disabled=false;
         }
     }
     xHTTP.open('POST', '/findEmail');                
@@ -128,3 +168,46 @@ function checkEmail(){
     xHTTP.send('email='+email);
 }
 
+var home = document.createElement("a");
+home.setAttribute("href","/");
+home.setAttribute("class","nav-link");
+
+var homeSpan = document.createElement("span");
+homeSpan.innerHTML=" Home";
+homeSpan.setAttribute("class","fa fa-home");
+home.appendChild(homeSpan);
+
+var liHome = document.createElement("li");
+liHome.setAttribute("class","nav-item");
+liHome.appendChild(home);
+navigation.appendChild(liHome);
+
+var liProduct = document.createElement("li");
+liProduct.setAttribute("class","nav-item");
+
+var product= document.createElement("a");
+product.setAttribute("class","nav-link");
+product.setAttribute("href","viewProducts");
+
+var productSpan = document.createElement("span");
+productSpan.innerHTML="Products";
+productSpan.setAttribute("class","fa fa-birthday-cake");
+product.appendChild(productSpan);
+
+liProduct.appendChild(product);
+navigation.appendChild(liProduct);
+
+var login=document.createElement("a");
+login.setAttribute("href","login")
+login.setAttribute("class","nav-link");
+
+var loginSpan = document.createElement("span");
+loginSpan.innerHTML=" SignIn ";
+loginSpan.setAttribute("class","fa fa-sign-in");
+login.appendChild(loginSpan);
+
+var liLogin = document.createElement("li");
+liLogin.setAttribute("class","nav-item");
+liLogin.appendChild(login);
+navigation.appendChild(liLogin);
+            

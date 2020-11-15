@@ -1,0 +1,43 @@
+@font-face{
+    font-family: "logo";
+    src:url("../fonts/Countryside-YdKj.ttf");
+  }
+  
+#background{
+    background-color: #facafa;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#logo{  
+    font-family: logo;
+    font-size: x-large;  
+    color: rgb(31, 28, 30);
+  }
+  ul{
+      position: absolute;
+      right: 0%;
+      float:right;
+      margin-top:20px;
+      margin-right: 20px;
+      cursor:pointer;
+    }
+    ul li{
+      display:inline;
+      transition: 0.5s ease;
+    }
+    ul li a{
+      font-size: larger;
+      text-decoration: none;
+      color:black;
+      padding:5px 20px;
+      border:1px;
+      border-radius:2px;
+      transition: 0.5s ease;
+    }
+  ul li a:hover{
+      background-color: #4b404b ;
+      color:white;
+      outline:none;
+      transition: 0.2s ease;
+    }

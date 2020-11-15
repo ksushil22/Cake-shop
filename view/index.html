@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dough me a flavour</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link href="../css/style.css" rel="stylesheet">
+</head>
+<body onload="getStarted()">
+
+<!-- Navigation or header -->
+<nav class="navbar navbar-expand-md sticky-top" id="background">
+	<div class="container-fluid bg-red" >
+		<a  class="navbar-brand" href="/" id="logo">Dough me a FLAVOUR</a>
+		<button class="navbar-toggler" type="button" data-toggler="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon" ></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarReponsive" >
+			<ul class="navbar-nav ml-auto" id="navigation">
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!--- Image Slider -->
+
+<div id="carouselExampleControls" class="carousel slide text-center" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+		<li data-target="#slides" data-slide-to="1"></li>
+		<li data-target="#slides" data-slide-to="2"></li>
+		<li data-target="#slides" data-slide-to="3"></li>
+	</ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+		<img src="./uploads/background.jpeg"  style="max-height: 800px;">
+		<div class="carousel-caption">
+			<h1 class="display-5 text-center" id="t">Dough me a FLAVOUR</h1>
+		</div>
+	</div>
+	<div class="carousel-item">
+		<img src="./uploads/background2.jpeg"  style="max-height: 800px;">
+	</div>
+	<div class="carousel-item">
+		<img src="./uploads/background3.jpg"  style="max-height: 800px;">
+	</div>
+	<div class="carousel-item">
+		<img src="./uploads/background4.jpg"  style="max-height: 800px;">
+	</div>
+   </div>	
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="color: black;"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<br>
+
+<div class="container-fluid">
+	<div class="row jumbotron">
+		<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+			<p class="lead">We not only offer you a huge variety of delectable cakes to make your celebrations special and grander but also provide you an impeccable delivery. <br>
+				See what we are hiding from you..
+			</p>
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+			<a href="viewProducts"><button type="button" class="btn btn-outline-secondary btn-lg">click Here...</button></a>
+		</div>
+	</div>
+</div>
+
+<!--- Welcome Section -->
+
+
+<div class="container padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class=" cursive-font display-4">Home like Baking</h1>
+		</div>
+		<div class="col-12">
+			<p class="lead">
+				We bake with our heart for You
+			</p>
+		</div>
+	</div>
+</div>
+
+<!--- Three Column Section -->
+
+<div class="container-fluid padding">
+	<h4 class="text-center">You ask what we got for you</h4> 
+	<hr class="w-50">
+	<div class="row text-center padding">
+		<div class="col-xs-12 col-sm-6  col-md-4">
+			<img src="../uploads/doughnut.png" class="w-25">
+			<h3>Doughnuts</h3>
+		</div>
+		<div class="col-xs-12 col-sm-6  col-md-4">
+			<img src="../uploads/cake.png" class="w-25">
+			<h3>Cakes</h3>
+		</div>
+		<div class="col-xs-12   col-md-4">
+			<img src="../uploads/cupcake.png" class="w-25">
+			<h3>Cup Cakes</h3>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<!-- products -->
+<div class="container">
+	<div class="row" id="divListOfProducts">
+
+	</div>
+</div>
+<!--- Fixed background -->
+<figure>
+	<div class="fixed-wrap">
+		<div id="fixed">
+
+		</div>
+	</div>
+</figure>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!--- Meet the team -->
+
+<header class="main-header">	
+	<h1 >Our pâtissier</h1>
+</header>
+
+<div class="container team">
+	<div class="card" data-aos="fade-left">
+			<img src="../uploads/user.jpg" alt="user" style="border-radius: 50%;" class="w-25" id="baker">
+			<hr>
+			<h4>Sushil Kainth</h4>
+	</div>
+	<br><br><br><br><br><br>
+
+</div><br><br><br>
+
+<!--- Footer -->
+<footer class="container-fluid padding">
+	<div class="row text-center">
+		<div class="col-md-4">
+			<p id="logofoot">Dough me a FLAVOUR</p>
+			<hr class="light">
+			<p>+91-8566009985</p>
+			<p>kainths.2206@gmail.com</p>
+			<p>Sainik Vihar</p>
+			<p>Jalandhar, Punjab, 144023</p>
+		</div>
+		<div class="col-md-4">
+			<hr class="light">
+			<h5>Our hours</h5>
+			<hr class="light">
+			<p>Monday - Saturday: 9am - 8pm</p>
+			<p>Sunday: closed</p>
+		</div>
+		<div class="col-md-4">
+			<hr class="light">
+			<h5>Services available in </h5>
+			<hr class="light">
+			<p>Jalandhar</p>
+			<p>Faridkot</p>
+		</div>
+		<div class="col-12">
+			<hr class="light">
+			<h5>&copy; doughmeaflavour.com</h5>
+		</div>
+	</div>
+</footer>
+
+
+<script src="../public/index.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+	  offset: 400,
+	  duration: 1000
+  });
+</script>
+</body>
+</html>
